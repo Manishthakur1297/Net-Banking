@@ -13,10 +13,4 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
-  disp: boolean = true;
-  abc():void
-  {
-    this.disp = !this.disp;
-  }
-
 }

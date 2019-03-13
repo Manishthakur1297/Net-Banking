@@ -23,6 +23,17 @@ import { EducationloanComponent } from './home/services/loan/educationloan.compo
 
 export const routes: Routes = [
 
+  // {
+  //   path : '',
+  //   component : HomeComponent
+  // },
+
+  {
+    path : '',
+    component : LoginComponent
+  },
+  
+
   {
     path : 'home',
     component : HomeComponent
@@ -78,7 +89,9 @@ export const routes: Routes = [
   {
     path : 'services/loan/education',
     component : EducationloanComponent
-  }
+  },
+
+  { path: '**', redirectTo: 'home' }
 ];
 
 @NgModule({

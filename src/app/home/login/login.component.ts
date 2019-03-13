@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginCheckService } from 'src/service/login-check.service';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'login',
@@ -9,7 +10,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private lc : LoginCheckService) { }
+  constructor(private router: Router, private lc : LoginCheckService) { }
 
   form1;
 
@@ -40,6 +41,8 @@ export class LoginComponent implements OnInit {
     }
       clickLogin(userForm)
       {
+        this.lc.setLogin(true);
+        this.router.navigate(["./"]);
         console.log(userForm);
       }
   }

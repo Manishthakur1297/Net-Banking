@@ -1,4 +1,4 @@
-<div *ngIf="lc.loginCheck">
+<div *ngIf="!lc.loginCheck">
 <fieldset>
     <legend>Login Form</legend>
     <form class ="container" [formGroup]="form1" (ngSubmit)="clickLogin(form1.value)">
