@@ -1,0 +1,15 @@
+<div *ngIf="lc.loginCheck">
+<fieldset>
+    <legend>Login Form</legend>
+    <form class ="container" [formGroup]="form1" (ngSubmit)="clickLogin(form1.value)">
+            <div class="loginBlock">
+                <label for="uname">User Name </label><input type="text" name="uname" placeholder="Enter Username" formControlName="uname"> <br>
+                <label for="password">Password </label><input type="password" name="password" placeholder="Enter Password" formControlName="password"> <br>
+                <input type="submit" value="SUBMIT" [disabled]="!form1.valid">
+                <input type="reset" value="RESET">
+            </div>
+        </form>
+
+</fieldset>
+
+</div>

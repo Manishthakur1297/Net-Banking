@@ -1,0 +1,33 @@
+<fieldset>
+        <legend>Home Loan</legend>
+        <form action="#">
+          <label for="p">Principal Amount </label><input type="text" #pa><br>
+          <label for="t">Tenure/Duration </label><input type="text" #td><br>
+          <label for="r">Rate of Interest </label><input type="text" name="rr"  #roi [(ngModel)]="li" disabled><br>
+      
+          <label for="i">EMI : </label><span id="interest">{{ emi }}</span><br><br>
+      
+        <input type="button" name = "b3" value="Calculate" (click)="getEmi(pa.value, td.value, roi.value)">
+      </form>
+      </fieldset>
+
+<!-- <fieldset>
+    <legend>Home Loan Calculator</legend>
+    <form action="#">
+                <label for="p">Principal </label><input type="number" name="prin" id="principal" #p1 (blur)="principal(p1.value)" required autofocus><span class="colorRed" id="pp">{{p}}</span><br>
+                
+                <label for="r">Rate </label><input type="number" name="rte" id="rate" #r1 (blur)="Rate(r1.value)" required step="0.01" min="0" max="100"><span class="colorRed" id="rr">{{r}}</span><br>
+
+                <label for="t">Time </label><input type="number" name="tme" id="time" #t1 (blur)="Time(t1.value)" required step="any" min="0" max="100"><span class="colorRed" id="tt">{{t}}</span><br>
+
+                <label for="i">Interest </label><span id="interest">{{i}}</span><br><br>
+                
+                <input type="button" name = "b3" value="Calculate" (click)="Interest()">
+
+                <input type="submit" name = "b1" value="Submit">
+
+                <input type="reset" name = "b2" value="Reset">
+
+    </form>
+
+</fieldset> -->

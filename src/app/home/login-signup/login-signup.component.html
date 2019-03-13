@@ -1,0 +1,23 @@
+<div *ngIf="!lc.loginCheck">
+<h2>Login or Signup First!</h2>
+<hr>
+<div class="centerLogin">
+        <button (click)="navigateLogin()">
+                <div class="polaroid">
+                        <img src="assets/img/account.png" alt="Account">
+                        <div class="container">
+                        <p>Login</p>
+                        </div>
+                </div>
+        </button>
+
+        <button (click)="navigateRegister()">
+                <div class="polaroid">
+                        <img src="assets/img/deposit.jpg" alt="Deposit">
+                        <div class="container">
+                                <p>Register</p>
+                        </div>
+                </div>
+        </button>
+</div>
+        <!-- <router-outlet></router-outlet> -->

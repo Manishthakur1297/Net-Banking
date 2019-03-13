@@ -1,0 +1,12 @@
+<fieldset>
+    <legend>Education Loan</legend>
+    <form action="#">
+      <label for="p">Principal Amount </label><input type="text" #pa><br>
+      <label for="t">Tenure/Duration </label><input type="text" #td><br>
+      <label for="r">Rate of Interest </label><input type="text" name="rr"  #roi [(ngModel)]="li" disabled><br>
+  
+      <label for="i">EMI : </label><span id="interest">{{ emi }}</span><br><br>
+  
+    <input type="button" name = "b3" value="Calculate" (click)="getEmi(pa.value, td.value, roi.value)">
+  </form>
+  </fieldset>

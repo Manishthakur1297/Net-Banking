@@ -1,0 +1,14 @@
+{
+    "customers": [
+      {
+        "id": "",
+        "firstName": "",
+        "lastName": "",
+        "dob": "",
+        "number": "",
+        "email": "",
+        "address": "",
+        "password": ""
+      }
+    ]
+  }

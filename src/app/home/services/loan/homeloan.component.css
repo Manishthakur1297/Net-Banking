@@ -1,0 +1,76 @@
+/* -------------------Form----------------------- */
+label {
+	width: 8em;
+	padding: 10px;
+	margin: 7px 0px 7px 7px;
+  display : inline-block;
+  /* clear: both;
+  float: left; */
+  }
+
+legend
+{
+    text-align: center;
+    font: bold;
+    font-size: 30px;
+    color: #4CAF50;
+    padding: 12px 12px 12px 12px;
+    width: 5em;
+    display: block;
+}
+
+fieldset
+{
+    background: rgba(242, 242, 242, 0.62);
+    font-size: 19px;
+    color: #4CAF50;
+    padding: 12px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    width: 600px;
+    margin:auto;
+}
+
+input
+{
+	border: 1px solid black;
+	border-radius: 4px;
+	padding: 9px;
+	margin: 20px 5px 5px 0px;   
+  width: 13em;
+ 
+}
+
+textarea
+{
+	border: 1px solid black;
+	border-radius: 4px;
+	padding: 9px;
+	margin: 5px 5px 5px 0px;   
+  width: 13em;
+  display: inline-block;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+input[type=submit],input[type=reset],input[type=button]
+{
+    background-color: #4CAF50;
+    border: 1px solid black;
+	border-radius: 4px;
+    color: white;
+    padding: 14px 24px;
+    text-decoration: none;
+    margin: 10px 6px 10px 6px;
+    cursor: pointer;
+}
+
+span.colorRed
+{
+    color: red;
+    font-size: 12px;
+}

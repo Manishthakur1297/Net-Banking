@@ -1,0 +1,32 @@
+<div *ngIf="lc.loginCheck">
+
+<fieldset>
+    <legend>Registration</legend>
+    <form class ="container" [formGroup]="form2" (ngSubmit)="clickRegister(form2.value)">
+        <div class="loginBlock">
+                  <label for="fname">First Name </label><input type="text" name="fname" placeholder="Enter First Name" formControlName="fname"> <br>
+        
+                  <label for="lname">Last Name </label><input type="text" name="lname" placeholder="Enter Last Name" formControlName="lname"> <br>
+        
+                  <label for="dob">Date of Birth </label><input type="date" name="dob" placeholder="Enter Date of Birth" formControlName="dob"> <br>
+        
+                  <label for="number">Mobile Number</label><input type="number" name="number" placeholder="Enter Mobile Number" formControlName="number"> <br>
+        
+                  <label for="email">Email </label><input type="email" name="email" placeholder="Enter Email ID" formControlName="email"> <br>
+                  
+                  <label for="address">Address </label><input type="text" name="address" placeholder="Enter Address" formControlName="address"> <br>
+                  
+                  <label for="pwd">Password </label><input type="password" name="pwd" placeholder="Enter Password" formControlName="pwd"> <br>
+                  
+                  <label for="Cpwd">Confirm Password</label><input type="password" name="Cpwd" placeholder="Confirm Password" formControlName="Cpwd"> <br>
+        
+                  <input type="submit" value="SUBMIT" [disabled]="!form2.valid">
+                  
+                  <input type="reset" value="RESET">
+                  
+                
+          </div>
+      </form>	
+  </fieldset>
+
+  </div>

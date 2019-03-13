@@ -1,0 +1,9 @@
+<!-- <div *ngIf="lc.loginCheck">
+  <navbar></navbar>
+</div> -->
+
+<div *ngIf="!lc.loginCheck">
+    <login-signup></login-signup>
+</div>
+
+<router-outlet></router-outlet>
