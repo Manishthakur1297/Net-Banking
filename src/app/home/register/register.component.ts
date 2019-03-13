@@ -3,6 +3,7 @@ import { LoginCheckService } from 'src/service/login-check.service';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import { Customers } from 'src/app/Customers';
 import { RestService } from 'src/service/rest.service';
+import { PasswordValidation } from 'src/app/PasswordValidation';
 
 @Component({
   selector: 'register',
@@ -65,7 +66,8 @@ export class RegisterComponent implements OnInit {
         address : new FormControl("", Validators.compose
         (
           [
-            Validators.required
+            Validators.required,
+            Validators.minLength(6)
           ]
         )),
 
@@ -73,7 +75,7 @@ export class RegisterComponent implements OnInit {
         (
           [
             Validators.required,
-            Validators.minLength(6),
+            Validators.minLength(6)
             // Validators.pattern('[\\w\\-\\s\\/]+')
           ]
         )),
@@ -81,9 +83,9 @@ export class RegisterComponent implements OnInit {
         Cpwd: new FormControl("",Validators.compose
         (
           [
-            Validators.required,
-            Validators.minLength(6),
-            
+              Validators.required,
+              Validators.minLength(6),
+              PasswordValidation.MatchPassword
           ]
         ))
       });
