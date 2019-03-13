@@ -27,6 +27,8 @@ import { EducationloanComponent } from './home/services/loan/educationloan.compo
 import { LoanService } from './home/services/loan.service';
 import { LoginCheckService } from 'src/service/login-check.service';
 import { LoginSignupComponent } from './home/login-signup/login-signup.component';
+import { RestService } from 'src/service/rest.service';
+import { HttpModule } from '@angular/http';
 
 
 @NgModule({
@@ -54,11 +56,11 @@ import { LoginSignupComponent } from './home/login-signup/login-signup.component
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,AppRoutingModule,
-        //HttpModule,
+        HttpModule,
         RouterModule,
         RouterModule.forRoot(routes)
   ],
-  providers: [LoanService, LoginCheckService],
+  providers: [LoanService, LoginCheckService, RestService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

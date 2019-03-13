@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginCheckService } from 'src/service/login-check.service';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import { Customers } from 'src/app/Customers';
+import { RestService } from 'src/service/rest.service';
 
 @Component({
   selector: 'register',
@@ -9,7 +11,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private lc : LoginCheckService) { }
+  constructor(private lc : LoginCheckService, private rs : RestService) { }
 
   form2 : FormGroup;
 
@@ -98,11 +100,24 @@ export class RegisterComponent implements OnInit {
 
     
 
-      clickRegister(userForm)
-      {
-          
-      }
+    clickRegister(f)
+    {
+      let c1 = new Customers(f.number, f.fname,f.lname,f.dob,f.number,f.email,f.address,f.pwd);
+      
+      this.rs.postCustomer(c1)
+      .subscribe
+      (
+        (response : any)=>console.log("Post Succesfully" + f + " " +f.password),
+        (error) => 
+          {
+              console.log("Record with id "+f.number+" already exists!!!");
+          }
+    )
   }
+
+
+
+}
 
 //   f : string = "";
 //   l : string = "";
