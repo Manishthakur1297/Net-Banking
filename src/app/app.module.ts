@@ -28,6 +28,7 @@ import { LoginCheckService } from 'src/service/login-check.service';
 import { LoginSignupComponent } from './home/login-signup/login-signup.component';
 import { RestService } from 'src/service/rest.service';
 import { HttpModule } from '@angular/http';
+import { LogoutComponent } from './home/logout/logout.component';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { HttpModule } from '@angular/http';
     LifecycleComponent,
     LoanComponent,
     EducationloanComponent,
-    LoginSignupComponent
+    LoginSignupComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,

@@ -4,6 +4,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 import { Customers } from 'src/app/Customers';
 import { RestService } from 'src/service/rest.service';
 import { PasswordValidation } from 'src/app/PasswordValidation';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'register',
@@ -12,7 +13,7 @@ import { PasswordValidation } from 'src/app/PasswordValidation';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private lc : LoginCheckService, private rs : RestService) { }
+  constructor(private router: Router, private lc : LoginCheckService, private rs : RestService) { }
 
   form2 : FormGroup;
 
@@ -59,7 +60,7 @@ export class RegisterComponent implements OnInit {
         (
           [
             Validators.required,
-            Validators.pattern("[^ @]*@[^ @]*")
+            //Validators.pattern("/^[^\\s@]+@[^\\s@]+\\.[^\\s@]{2,}$/")
           ]
         )),
 
@@ -92,16 +93,6 @@ export class RegisterComponent implements OnInit {
 
     }
 
-    // passwordValidator(control)
-    // {
-    //     if(control.value==this.form2.controls.pwd.value)
-    //     {
-    //       return {"Cpwd":true};
-    //     }
-    // }
-
-    
-
     clickRegister(f)
     {
       let c1 = new Customers(f.number, f.fname,f.lname,f.dob,f.number,f.email,f.address,f.pwd);
@@ -109,10 +100,18 @@ export class RegisterComponent implements OnInit {
       this.rs.postCustomer(c1)
       .subscribe
       (
-        (response : any)=>console.log("Post Succesfully" + f + " " +f.password),
+        (response : any)=>
+        {
+          alert("Register Successfully !!! Login Now....");
+          this.lc.setLogin(false);
+          //this.rs.setUID(userForm.uID);
+          this.router.navigate(["./login"]);
+        }
+        ,
         (error) => 
           {
               console.log("Record with id "+f.number+" already exists!!!");
+              alert("Record with id "+f.number+" already exists!!!");
           }
     )
   }

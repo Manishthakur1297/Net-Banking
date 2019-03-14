@@ -13,7 +13,10 @@ export class RestService {
 
   url : string = "http://localhost:3000/customers/";
 
-  constructor(private http : Http) { }
+  UID : any ;
+
+  constructor(private http : Http) {
+   }
 
   postCustomer(customer : Customers)
   {
@@ -21,7 +24,29 @@ export class RestService {
     .map((response : any ) => response);
   }
 
+  getCustomer(id)
+  {
+    return this.http.get(this.url+id)
+    .map((response : any ) => response.json());
+  }
 
+  updateCustomer(customer : Customers, id)
+  {
+    return this.http.put(this.url+id,customer)
+    .map((response : any ) => response);
+  }
 
   
+
+  // setter-------------
+
+  setUID(i)
+  {
+      this.UID = i;
+  }
+
+  getUID(): any
+  {
+    return this.UID;
+  }
 }

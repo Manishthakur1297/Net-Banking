@@ -1,4 +1,4 @@
-<div *ngIf="lc.loginCheck">
+<div *ngIf="lc.loginCheck; else loggedOut">
 <h1>Welcome to Home Page</h1>
 <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus in rutrum ante, vitae porta tellus. Nullam et urna eget tellus sodales bibendum vitae eget metus. Phasellus nec enim accumsan, viverra enim quis, condimentum augue. Maecenas tellus mi, egestas id pellentesque sit amet, fringilla ut nisl. Cras ac cursus nisi. Ut dolor urna, aliquam eget ipsum a, cursus porttitor sapien. Nam orci sem, mattis eu eros non, tempus eleifend sem. Fusce auctor orci non leo viverra fermentum. Duis at tincidunt erat. Cras massa turpis, ultricies eget ullamcorper eget, pellentesque ac dui. Proin vitae ultrices dolor. Maecenas eget arcu eget ipsum ullamcorper faucibus. Fusce iaculis orci eu facilisis imperdiet. Sed semper eros ut sem ultrices, ut efficitur justo dignissim. Vivamus ullamcorper tempor mi, at aliquam eros.
@@ -43,3 +43,7 @@
 </p>
 
 </div>
+
+<ng-template #loggedOut>
+        <logout></logout>
+    </ng-template>

@@ -3,12 +3,19 @@
     <legend>Login Form</legend>
     <form class ="container" [formGroup]="form1" (ngSubmit)="clickLogin(form1.value)">
             <div class="loginBlock">
-                <label for="uname">User Name </label><input type="text" name="uname" placeholder="Enter Username" formControlName="uname"> <br>
-                <label for="password">Password </label><input type="password" name="password" placeholder="Enter Password" formControlName="password"> <br>
+                <label for="uid">User ID </label><input type="text" name="uID" placeholder="Enter Username" formControlName="uID"> 
+                <div class= "error-block" *ngIf="(form1.controls['uID'].invalid && (form1.controls['uID'].dirty || form1.controls['uID'].touched))">
+                    <span *ngIf="form1.controls['uID'].errors.required"> User ID is required. </span>
+                </div><br>
+                <!-- <span style="color:Red" ng-show="form1.uID.value.$error.minLength">Min 6 Characters</span><br> -->
+                <label for="password">Password </label><input type="password" name="password" placeholder="Enter Password" formControlName="password">
+                <div class= "error-block" *ngIf="(form1.controls['password'].invalid && (form1.controls['password'].dirty || form1.controls['password'].touched))">
+                        <span *ngIf="form1.controls['password'].errors.required"> Password is required. </span>
+                    </div><br>
                 <input type="submit" value="SUBMIT" [disabled]="!form1.valid">
                 <input type="reset" value="RESET">
             </div>
-        </form>
+    </form>
 
 </fieldset>
 

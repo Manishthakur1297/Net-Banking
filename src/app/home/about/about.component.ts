@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginCheckService } from 'src/service/login-check.service';
 
 @Component({
   selector: 'about',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
+  constructor(private lc : LoginCheckService) { }
 
   ngOnInit() {
   }
+
+  
 
 }

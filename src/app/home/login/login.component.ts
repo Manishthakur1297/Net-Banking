@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LoginCheckService } from 'src/service/login-check.service';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
+import { RestService } from 'src/service/rest.service';
 
 @Component({
   selector: 'login',
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private router: Router, private lc : LoginCheckService) { }
+  constructor(private router: Router, private lc : LoginCheckService, private rs : RestService) { }
 
   form1;
 
@@ -19,11 +20,11 @@ export class LoginComponent implements OnInit {
     this.form1 = new FormGroup
     (
       {
-        uname: new FormControl("", Validators.compose
+        uID: new FormControl("", Validators.compose
         (
           [
             Validators.required,
-            Validators.minLength(6),
+            //Validators.minLength(6),
             Validators.maxLength(15)
           ]
         )),
@@ -41,8 +42,31 @@ export class LoginComponent implements OnInit {
     }
       clickLogin(userForm)
       {
-        this.lc.setLogin(true);
-        this.router.navigate(["./"]);
+        this.rs.getCustomer(userForm.uID)
+        .subscribe
+        (
+          (response : any )=>
+          {
+            let pwd = response.password;
+            //console.log("pwd : "+pwd);
+            //console.log("Password : "+userForm.password);
+            if(pwd == userForm.password)
+            {
+              this.lc.setLogin(true);
+              this.rs.setUID(userForm.uID);
+              this.router.navigate(["./home"]);
+              //alert("Login Successful !!! Welcome to Net Banking")
+            }
+            else
+            {
+              console.log("User ID and password do not match...");
+              alert("User ID and password do not match...");
+            }
+          },
+
+          (error : any )=> alert("User ID do not exist !!!!")
+        )
+        
         console.log(userForm);
       }
   }

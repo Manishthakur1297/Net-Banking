@@ -40,7 +40,29 @@
     margin-bottom: 4px; */
     display: inline;
   }
+
+
   
+  .navigation-bar li button
+  {
+    background:none!important;
+    color:inherit;
+    border:none; 
+    padding:0!important;
+    font-size: 20px;
+    border-bottom: 3px dotted red;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    color: white;
+    font-style: oblique, italic, bold;
+    background: #4CAF50;
+    text-decoration: none;
+    line-height: 55px;
+    
+    
+
+  }
+
   .navigation-bar li a {
     color: rgb(255, 255, 255);
     font-size: 16px;

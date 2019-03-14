@@ -1,0 +1,14 @@
+div{
+    height: 400px;
+    width: 800px;
+    margin: auto;
+    margin-top: 50px;
+    color: #4CAF50;
+    font-size: 50px;
+    font-style: italic;
+    background: rgba(242, 242, 242, 0.863);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }

@@ -1,9 +1,4 @@
-<!-- 
-<div *ngIf="disp">
-    <lifecycle></lifecycle>
-</div>
-
-<button type="button" (click)="abc()">ADD/REMOVE</button> -->
+<div *ngIf="lc.loginCheck; else loggedOut">
 
 <h1>About Us</h1>
 <p>
@@ -47,3 +42,9 @@
         
                                                                 </p><p> Nam ex quam, rutrum id semper quis, porta sit amet ipsum. Nunc vel blandit nunc, at gravida orci. Fusce vitae lorem faucibus, convallis dolor vitae, tincidunt ligula. Suspendisse dictum scelerisque venenatis. Suspendisse potenti. Vivamus tristique nunc id gravida eleifend. Vestibulum eu faucibus elit, sed luctus dui. Nullam ac metus ac diam vestibulum consectetur. Donec elit nisi, finibus sit amet convallis id, pellentesque id sapien. Nullam varius, risus at eleifend dapibus, nisl velit suscipit metus, suscipit laoreet metus ante sed neque.
 </p>
+
+</div>
+
+<ng-template #loggedOut>
+        <logout></logout>
+    </ng-template>

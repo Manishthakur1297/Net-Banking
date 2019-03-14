@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginCheckService } from 'src/service/login-check.service';
 
 @Component({
   selector: 'services',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServicesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private lc : LoginCheckService) { }
 
   ngOnInit() {
   }

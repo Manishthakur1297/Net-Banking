@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginCheckService } from 'src/service/login-check.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'navbar',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private lc : LoginCheckService, private router : Router) { }
 
   ngOnInit() {
+  }
+
+  logout()
+  {
+      this.lc.setLogin(false);
+      this.router.navigate([""]);
   }
 
 }
