@@ -29,6 +29,9 @@ import { LoginSignupComponent } from './home/login-signup/login-signup.component
 import { RestService } from 'src/service/rest.service';
 import { HttpModule } from '@angular/http';
 import { LogoutComponent } from './home/logout/logout.component';
+import { HeaderComponent } from './home/header/header.component';
+import { FooterComponent } from './home/footer/footer.component';
+
 
 
 @NgModule({
@@ -51,7 +54,9 @@ import { LogoutComponent } from './home/logout/logout.component';
     LoanComponent,
     EducationloanComponent,
     LoginSignupComponent,
-    LogoutComponent
+    LogoutComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

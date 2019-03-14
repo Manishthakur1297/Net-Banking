@@ -10,6 +10,6 @@ export class LoginCheckService {
 
   setLogin(lc : boolean)
   {
-    this.loginCheck = lc;
+    return this.loginCheck = lc;
   }
 }

@@ -20,6 +20,7 @@ import { CardsComponent } from './home/services/cards/cards.component';
 import { LifecycleComponent } from './home/lifecycle/lifecycle.component';
 import { LoanComponent } from './home/services/loan/loan.component';
 import { EducationloanComponent } from './home/services/loan/educationloan.component';
+import { AuthGuard } from './home/auth.guard';
 
 export const routes: Routes = [
 
@@ -30,6 +31,7 @@ export const routes: Routes = [
 
   {
     path : '',
+    // canActivate : [AuthGuard],
     component : LoginComponent
   },
   
