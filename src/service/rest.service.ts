@@ -5,6 +5,7 @@ import { Http } from '@angular/http';
 import { Response } from '@angular/http/src/static_response'
 import { Customers } from 'src/app/Customers';
 import 'rxjs/rx';
+import { Contact } from 'src/app/Contact';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,7 @@ import 'rxjs/rx';
 export class RestService {
 
   url : string = "http://localhost:3000/customers/";
+  contactUrl : string = "http://localhost:3000/contact/";
 
   UID : any ;
 
@@ -34,6 +36,12 @@ export class RestService {
   {
     return this.http.put(this.url+id,customer)
     .map((response : any ) => response);
+  }
+
+  postMessage(contact : Contact)
+  {
+    return this.http.post(this.contactUrl,contact)
+    .map((response : any) => response);
   }
 
   

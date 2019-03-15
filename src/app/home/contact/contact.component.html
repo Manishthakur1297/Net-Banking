@@ -2,20 +2,20 @@
 <h1>Contact Us</h1>
 
 <div class="container">
-  <form action="">
+  <form [formGroup]="form1" (ngSubmit)="sendMessage(form1.value)">
     <label for="fname">First Name</label>
-    <input type="text" id="fname" name="firstname" placeholder="Enter First Name..">
+    <input type="text" id="fname" name="firstname" placeholder="Enter First Name.." formControlName="fname">
 
     <label for="lname">Last Name</label>
-    <input type="text" id="lname" name="lastname" placeholder="Enter Last Name..">
+    <input type="text" id="lname" name="lastname" placeholder="Enter Last Name.." formControlName="lname">
 
     <label for="email">Email ID</label>
-    <input type="email" id="email" name="emailID" placeholder="Enter Email ID..">
+    <input type="email" id="email" name="emailID" placeholder="Enter Email ID.." formControlName="email">
 
     <label for="subject">Subject</label>
-    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"  formControlName="subject"></textarea>
 
-    <input type="submit" value="Submit">
+    <input type="submit" value="SUBMIT" [disabled]="!form1.valid">
   </form>
 </div>
 </div>

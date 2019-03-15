@@ -1,3 +1,25 @@
-<p>
-  cards works!
-</p>
+<div *ngIf="lc.loginCheck; else loggedOut">
+  <h1>Cards Available</h1>
+          <hr>
+          <a routerLink="debit">
+              <div class="polaroid">
+                      <img src="assets/img/debit.jpg" alt="Account">
+                      <div class="container">
+                      <p>Debit Cards</p>
+                      </div>
+              </div>
+          </a>
+          <a routerLink="credit">
+                  <div class="polaroid">
+                          <img src="assets/img/credit.jpg" alt="Loan">
+                          <div class="container">
+                          <p>Credit cards</p>
+                          </div>
+                  </div>
+          </a>
+  
+  </div>
+  
+  <ng-template #loggedOut>
+          <logout></logout>
+      </ng-template>
